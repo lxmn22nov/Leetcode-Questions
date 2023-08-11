@@ -26,6 +26,6 @@ class DivisorGame {
       }
       public static void main(String[] args) {
             int N = 3;
-            System.out.println(divisorGame(N));;
+            System.out.println(divisorGame(N));
       }
 }
