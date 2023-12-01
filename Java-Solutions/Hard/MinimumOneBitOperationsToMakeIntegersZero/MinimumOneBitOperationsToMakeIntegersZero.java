@@ -1,3 +1,5 @@
+package Hard.MinimumOneBitOperationsToMakeIntegersZero;
+
 /*
  * Given an integer n, you must transform it into 0 using the following
  * operations any number of times:
