@@ -36,7 +36,7 @@ class CheckIfArrayPairsAreDivisibleByK {
             return false;
         }
         for (int i = 1; i <= k / 2; i++) {
-            if (frequency[i] != frequency[k - 1]) {
+            if (frequency[i] != frequency[k - i]) {
                 return false;
             }
         }
