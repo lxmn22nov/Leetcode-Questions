@@ -39,23 +39,19 @@ import java.util.*;
  */
 class MaximalScoreAfterApplyingKOperations {
     public long maxKelements(int[] nums, int k) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
 
-        // Add all elements to the priority queue.
-        for (int num : nums) {
-            pq.add(num);
+        for (int i : nums) {
+            pq.add(i);
         }
 
-        int score = 0;
+        long ans = 0;
 
-        while (k > 0) {
-            // Extract the max element.
-            int element = pq.poll();
-            score += element;
-            // Re-insert ceil (element / 3)d into the queue.
-            pq.add((int) Math.ceil(element / 3.0));
-            k--;
+        while (k-- > 0) {
+            int n = pq.poll();
+            ans += n;
+            pq.offer((n + 2) / 3);
         }
-        return score;
+        return ans;
     }
 }
